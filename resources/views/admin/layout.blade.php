@@ -6,6 +6,7 @@
   <title>Admin Dashboard – Shirtify</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet"/>
+  @stack('styles')
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -72,10 +73,11 @@
 
       <!-- Sidebar -->
       <div class="col-md-2 sidebar">
-        <div class="text-center py-4 fs-4 border-bottom">🧥 <strong>Shirtify</strong></div>
+        <div class="text-center py-4 fs-4 border-bottom">🧥 <strong><a href="{{ route("shirts.index") }}">Shirtify</a></strong></div>
         <a href="/admin/main" class="active"><i class="ri-dashboard-line me-2"></i> Dashboard</a>
         <a href="/admin/products"><i class="ri-shirt-line me-2"></i> Products</a>
         <a href="/admin/orders"><i class="ri-shopping-bag-line me-2"></i> Orders</a>
+        <a href="{{ route("admin.category.index") }}"><i class="ri-shopping-bag-line me-2"></i> Category</a>
         <a href="#"><i class="ri-user-line me-2"></i> Users</a>
         <form method="POST" action="{{ route("logout") }}">
             @csrf
@@ -94,5 +96,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  @stack('scripts');
 </body>
 </html>

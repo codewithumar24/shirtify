@@ -4,6 +4,13 @@
 <!-- Analytics Cards -->
 <div class="row mt-4 mb-4 g-4">
 
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+
     <!-- Product Table -->
     <div class="card mb-4">
         <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
